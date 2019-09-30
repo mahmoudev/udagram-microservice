@@ -1,0 +1,2 @@
+export KUBECONFIG=/Users/mahmoudimdoukh/Learning/MOOC/microservice/aws/udacity-microservices-kubeconfig
+kubectl port-forward service/frontend 8100:8100  
