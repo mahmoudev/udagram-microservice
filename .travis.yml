@@ -16,8 +16,10 @@ before_install:
   - sudo mv ./kubectl /usr/local/bin/kubectl
 
 
-  - mkdir ${HOME}/.kube/config
-  - cd ${HOME}/.kube/config
+  - mkdir ${HOME}/.kube
+  - cd ${HOME}/.kube
+  - mkdir config
+  - cd config
   - curl -o config https://$GITHUB_ACCESS_TOKEN@raw.githubusercontent.com/mahmoudev/udagram-microservice/master/config/kubeconfig.sh
 
   - kubectl config set clusters.udacity-microservices.certificate-authority-data "$KUBE_CLUSTER_CERTIFICATE"
