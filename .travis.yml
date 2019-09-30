@@ -6,6 +6,7 @@ env:
   - DOCKER_COMPOSE_VERSION=1.23.2
 
 before_install:
+  - ls
   - docker -v && docker-compose -v
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
@@ -24,9 +25,10 @@ before_install:
   - kubectl config set users.kubernetes-admin.client-certificate-data "$KUBE_CLIENT_CERTIFICATE"
   - kubectl config set users.kubernetes-admin.client-key-data "$KUBE_CLIENT_KEY"
   - kubectl get deployments
-  - cd ..
+  - ls
 
 
 
 install:
+  - ls
   - docker-compose -f udacity-c3-deployment/docker/docker-compose-build.yaml build --parallel 
